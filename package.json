@@ -1,0 +1,19 @@
+{
+  "name": "today-i-did",
+  "version": "1.0.0",
+  "description": "Don't forget what you did in standup. Track what you did at the end of the day, and get a reminder of it the next day",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ghernandez345/electronToy.git"
+  },
+  "author": "Gabriel Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghernandez345/electronToy/issues"
+  },
+  "homepage": "https://github.com/ghernandez345/electronToy#readme"
+}
