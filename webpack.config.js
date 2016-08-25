@@ -1,18 +1,22 @@
 /**
  * Webpack config
  */
-
-var debug = process.env.NODE_ENV;
-var webpack = require('wepack');
 var path = require('path');
+
+var SOURCE_PATH = './src';
+var DISTRIBUTION_PATH = './dist';
 
 module.exports = {
 
-  context: path.join(__dirname, 'src'),
+  context: path.join(__dirname, SOURCE_PATH),
 
-  devtools: debug ? 'inline-sourcemap' : null,
+  devtools: 'inline-sourcemap',
 
-  entry: ['babel-polyfill', './js/app.js'],
+  entry: ['babel-polyfill', './app.js'],
+
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
 
   devServer: {
 
@@ -24,7 +28,7 @@ module.exports = {
 
   module: {
 
-    loaders: [
+    loader: [
 
       {
         test: /\.jsx?$/,
@@ -38,16 +42,12 @@ module.exports = {
 
   output: {
 
-    path: __dirname + '/src/',
+    path: path.join(__dirname, DISTRIBUTION_PATH),
 
     filename: 'bundle.min.js'
 
   },
 
-  plugins: debug ? [] : [
-    new webpack.optimize.DedupePlugin(),
-    new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.UglifyJsPlugin({ mangle: false, sourcemap: false })
-  ]
+  plugins: []
 
 };
