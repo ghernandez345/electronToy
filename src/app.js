@@ -2,16 +2,18 @@
  * Client application entry point
  */
 
-import {ReactDom} from 'react-dom';
+import React from 'react';
+import {render} from 'react-dom';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
-import rootReducer from './ui/rootReduer';
+import rootReducer from './ui/rootReducer';
 
 let store = createStore(rootReducer);
 
-ReactDom.render(
+render(
   <Provider store={store}>
     <h1>This is a tests</h1>
-  </Provider>
-, document.findElementById('application-container'));
+  </Provider>,
+  document.getElementById('application-container')
+);

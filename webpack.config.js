@@ -18,24 +18,15 @@ module.exports = {
     extensions: ['', '.js', '.jsx']
   },
 
-  devServer: {
-
-    inline: true,
-
-    port: 3333
-
-  },
-
   module: {
 
-    loader: [
+    loaders: [
 
       {
         test: /\.jsx?$/,
         exclude: /(node_modules)/,
-        loader: ['babel-loader']
-      }
-
+        loader: 'babel-loader'
+      },
     ]
 
   },
@@ -44,10 +35,8 @@ module.exports = {
 
     path: path.join(__dirname, DISTRIBUTION_PATH),
 
-    filename: 'bundle.min.js'
+    filename: 'bundle.js'
 
-  },
-
-  plugins: []
+  }
 
 };
