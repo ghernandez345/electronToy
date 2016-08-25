@@ -10,7 +10,7 @@ module.exports = {
 
   context: path.join(__dirname, SOURCE_PATH),
 
-  devtools: 'inline-sourcemap',
+  devtool: 'inline-source-map',
 
   entry: ['babel-polyfill', './app.js'],
 
